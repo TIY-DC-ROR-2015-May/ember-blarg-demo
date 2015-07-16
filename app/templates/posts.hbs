@@ -2,7 +2,8 @@
 
 <div class="col-md-4">
   <ul class="list-unstyled">
-    {{#each model as |post|}}
+    <button class="btn btn-default btn-mini" {{action "flipSort"}}>Flip</button>
+    {{#each sortedList as |post|}}
       <li>
         {{#link-to 'post' post.id}}
           ({{post.votes}}) {{post.title}}
