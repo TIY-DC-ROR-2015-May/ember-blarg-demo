@@ -9,6 +9,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var u = require('underscore');
+var moment = require('moment');
 
 var app = express();
 
@@ -31,9 +32,9 @@ app.use(function(req, res, next) {
 });
 
 var posts = [
-  {id: 1, title: "First Post!", author: 1, body: "Tlljndflkajsndkfjnsdf"},
-  {id: 2, title: "A second thing", author: 2, body: "kajsndfjaekljfwek jalskdjflaksjnf lakjenfl kjanelkfj nakf"},
-  {id: 3, title: "Kyle's First Blog Post", author: 3, body: "Uhhh ... krc2f72264mashthekeyboard"}
+  {id: 1, title: "First Post!", author: 1, body: "Tlljndflkajsndkfjnsdf", date: new Date(2015, 1, 1, 12, 34)},
+  {id: 2, title: "A second thing", author: 2, body: "kajsndfjaekljfwek jalskdjflaksjnf lakjenfl kjanelkfj nakf", date: new Date(2015, 04, 08, 15, 00)},
+  {id: 3, title: "Kyle's First Blog Post", author: 3, body: "Uhhh ... krc2f72264mashthekeyboard", date: new Date(2015, 07, 04, 20, 00)}
 ]
 
 var authors = [

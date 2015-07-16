@@ -13,7 +13,10 @@
 {{/if}}
 
 <h1>{{model.title}}</h1>
-<h2>by {{model.author.name}}</h2>
+<h2>
+  by {{model.author.name}}
+  <small>{{format-date model.date}}</small>
+</h2>
 
 <div class="well">
   {{model.body}}
