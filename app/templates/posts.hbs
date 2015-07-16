@@ -5,7 +5,7 @@
     {{#each model as |post|}}
       <li>
         {{#link-to 'post' post.id}}
-          {{post.title}}
+          ({{post.votes}}) {{post.title}}
         {{/link-to}}
         by {{post.author.name}}
       </li>

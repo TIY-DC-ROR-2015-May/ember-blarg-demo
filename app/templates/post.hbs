@@ -18,6 +18,12 @@
   <small>{{format-date model.date}}</small>
 </h2>
 
+<div>
+  <button class="btn btn-default btn-mini" {{action "upvote"}}>^</button>
+  {{model.votes}} votes
+  <button class="btn btn-default btn-mini" {{action "downvote"}}>v</button>
+</div>
+
 <div class="well">
   {{markdown model.body}}
 </div>

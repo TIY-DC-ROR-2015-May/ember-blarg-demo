@@ -20,6 +20,7 @@ module.exports = function(defaults) {
   // along with the exports of each module as its value.
   app.import("bower_components/bootstrap/dist/css/bootstrap.min.css")
   app.import("bower_components/moment/min/moment.min.js")
+  app.import("bower_components/showdown/dist/showdown.min.js")
 
   return app.toTree();
 };
