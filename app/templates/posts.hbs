@@ -3,7 +3,9 @@
 <ul class="list-unstyled">
   {{#each model as |post|}}
     <li>
-      {{post.title}}
+      {{#link-to 'post' post.id}}
+        {{post.title}}
+      {{/link-to}}
       by {{post.author.name}}
     </li>
   {{/each}}

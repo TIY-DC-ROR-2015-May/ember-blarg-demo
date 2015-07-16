@@ -31,18 +31,32 @@ app.use(function(req, res, next) {
 });
 
 var posts = [
-  {id: 1, title: "First Post!", author: 1},
-  {id: 2, title: "A second thing", author: 2}
+  {id: 1, title: "First Post!", author: 1, body: "Tlljndflkajsndkfjnsdf"},
+  {id: 2, title: "A second thing", author: 2, body: "kajsndfjaekljfwek jalskdjflaksjnf lakjenfl kjanelkfj nakf"},
+  {id: 3, title: "Kyle's First Blog Post", author: 3, body: "Uhhh ... krc2f72264mashthekeyboard"}
 ]
 
 var authors = [
   {id: 1, name: "Katie Walsh"},
-  {id: 2, name: "Su Kim"}
+  {id: 2, name: "Su Kim"},
+  {id: 3, name: "Kylf"}
 ]
 
 app.get("/posts", function(req, res) {
   res.json({
     posts: posts
+  })
+})
+
+app.get("/posts/:id", function(req, res, next) {
+  post = u.find(posts, function(p) {
+    return p.id == req.params.id
+  })
+
+  if (!post) { return next() }
+
+  res.json({
+    post: post
   })
 })
 
