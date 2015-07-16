@@ -8,6 +8,8 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+var u = require('underscore');
+
 var app = express();
 
 // view engine setup
@@ -29,13 +31,30 @@ app.use(function(req, res, next) {
 });
 
 var posts = [
-  {id: 1, title: "First Post!"},
-  {id: 2, title: "A second thing"}
+  {id: 1, title: "First Post!", author: 1},
+  {id: 2, title: "A second thing", author: 2}
+]
+
+var authors = [
+  {id: 1, name: "Katie Walsh"},
+  {id: 2, name: "Su Kim"}
 ]
 
 app.get("/posts", function(req, res) {
   res.json({
     posts: posts
+  })
+})
+
+app.get("/authors/:id", function(req, res, next) {
+  author = u.find(authors, function(a) {
+    return a.id == req.params.id
+  })
+
+  if (!author) { return next() }
+
+  res.json({
+    author: author
   })
 })
 

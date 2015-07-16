@@ -2,6 +2,9 @@
 
 <ul class="list-unstyled">
   {{#each model as |post|}}
-    <li>{{post.title}}</li>
+    <li>
+      {{post.title}}
+      by {{post.author.name}}
+    </li>
   {{/each}}
 </ul>
