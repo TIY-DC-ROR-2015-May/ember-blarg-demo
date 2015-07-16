@@ -1,3 +1,17 @@
+{{#if isEditing}}
+  <div class="form-group">
+    <label>Title</label>
+    {{input class="form-control" type="text" value=title}}
+  </div>
+  <div class="form-group">
+    <label>Body</label>
+    {{textarea class="form-control" value=body}}
+  </div>
+  <button class="btn btn-primary" {{action 'doneEditing'}}>Save</button>
+{{else}}
+  <button class="btn btn-default" {{action 'edit'}}>Edit</button>
+{{/if}}
+
 <h1>{{model.title}}</h1>
 <h2>by {{model.author.name}}</h2>
 
